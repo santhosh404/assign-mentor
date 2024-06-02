@@ -182,24 +182,8 @@ const assignStudents = async (req, res) => {
             })
         }
 
-        //Checking whelther the student is already within any mentor
-        // const allStudentsInMentors = allMentors.map(allMentor => allMentor.students.map(s => ({ mentorId: allMentor._id, studentId: s }))).flat()
-
-        // //If the student is already under some mentor, we need to remove student from that mentor 
-        // for (const s of student_id) {
-        //     for (const sm of allStudentsInMentors) {
-        //         if (sm.studentId == s) {
-        //             // Update the mentor document to remove the student
-        //             await MentorModel.findOneAndUpdate( 
-        //                 { _id: sm.mentorId },
-        //                 { $pull: { students: s } }
-        //             );
-        //         }
-        //     }
-        // }
-
         const studentIdsWithMentor = allStudents.filter(st => st.current_mentor == mentor_id).map(s => s._id)
-        const updateMentor = await MentorModel.findOneAndUpdate({ _id: mentor._id }, { $set: { students: [...studentIdsWithMentor, ...student_id] }});
+        const updateMentor = await MentorModel.findOneAndUpdate({ _id: mentor._id }, { $set: { students: [...studentIdsWithMentor, ...student_id] }}, { new: true });
 
         //Updating the students collection
         students.forEach(async (st) => {

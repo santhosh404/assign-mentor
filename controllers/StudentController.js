@@ -172,7 +172,7 @@ const assignMentor = async (req, res) => {
         const updateMentor = await MentorModel.findOneAndUpdate({ _id: mentor_id }, { $push: { students: student_id } });
 
         //Update the student with previous and current mentor
-        const updateStudent = await StudentModel.findOneAndUpdate({ _id: student_id }, { $set: { previous_mentor: student.current_mentor, current_mentor: mentor_id } });
+        const updateStudent = await StudentModel.findOneAndUpdate({ _id: student_id }, { $set: { previous_mentor: student.current_mentor, current_mentor: mentor_id } }, { new: true });
 
         return res.status(200).json({
             status: "Success",
