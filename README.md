@@ -19,9 +19,9 @@ The project is an API for managing mentors and students within an educational or
 
 #### Create mentor
 
-````http
-  POST /api/v1/mentors/create-mentor
-````
+```http
+POST /api/v1/mentors/create-mentor
+```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -34,17 +34,17 @@ The project is an API for managing mentors and students within an educational or
 #### Get all mentors
 
 ```http
-  GET /api/v1/mentors/all-mentors
+GET /api/v1/mentors/all-mentors
 ```
 #### Get single mentor
 
 ```http
-  GET /api/v1/mentors/get-mentor
+GET /api/v1/mentors/get-mentor
 ```
 #### Assign one or more students to mentor
 
 ```http
-  PUT /api/v1/mentors/assign-students
+PUT /api/v1/mentors/assign-students
 ```
 
 | Parameter | Type     | Description                |
@@ -56,7 +56,7 @@ The project is an API for managing mentors and students within an educational or
 #### Create student
 
 ```http
-  POST /api/v1/mentors/create-student
+POST /api/v1/mentors/create-student
 ```
 
 | Parameter | Type     | Description                |
@@ -70,17 +70,17 @@ The project is an API for managing mentors and students within an educational or
 #### Get all students
 
 ```http
-  GET /api/v1/students/all-students
+GET /api/v1/students/all-students
 ```
 #### Get single student
 
 ```http
-  GET /api/v1/students/get-student
+GET /api/v1/students/get-student
 ```
 #### Assign or change mentor to student
 
 ```http
-  PUT /api/v1/mentors/assign-students
+PUT /api/v1/mentors/assign-students
 ```
 
 | Parameter | Type     | Description                |
